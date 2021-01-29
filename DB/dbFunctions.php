@@ -491,4 +491,28 @@ function changePassword($email, $password, $repassword){
 }
 
 
+function checkEmailExists($email)
+{
+	$pdo = setConnectionInfo(array(DBCONNECTION,DBUSER,DBPASS));
+	$sql = "SELECT * FROM user WHERE email='$email'";
+	try {
+	$statement= $pdo->prepare($sql);
+	$statement->execute();
+
+	if($statement->rowCount() > 0)
+	{
+		return true;
+	}
+	else 
+	{
+		return false;
+	}
+	}
+	catch(PDOException $e){
+		die($e->getMessage());
+	}
+	$pdo = null;
+}
+
+
 ?>
