@@ -18,9 +18,7 @@
 
       <input type="text" class="form-control mb-2" id="validationCustom02" name="last" placeholder="Last name" value="" required>
 
-      <input type="email" id="inputEmail" class="form-control mb-2" name="email" placeholder="MMU Email address" required="" autofocus=""  title="Email must be an MMU email id@mmu.edu.my" >
-      <!--  pattern=" [0-9]+@[a-z.]+\.[a-z]{2,4}$" -->
-
+      <input type="email" id="inputEmail" class="form-control mb-2" name="email" placeholder="MMU Email address" required="" autofocus=""  title="Email must be an MMU email id@mmu.edu.my" pattern ="[a-zA-Z0-9]+@+([a-zA-Z]+.mmu.edu.my|mmu.edu.my)">
 
       <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required="">
 
