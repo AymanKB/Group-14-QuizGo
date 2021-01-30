@@ -12,15 +12,16 @@ $valid = "0";
 $page = "login.php";
 
 if(isset($_POST['Submit'])){
-  if(checkEmailExists($_POST['email']))
-  {
-    changePassword($_POST['email'],$_POST['password'],$_POST['repassword']);
-  }
-  else{
-    //Error if email is not exist
-    echo '<script>alert("Please enter valid email address")</script>';
-    echo "<script>setTimeout(\"location.href = 'http://localhost/quizgo/html/general/forgot-password.php';\",1500);</script>";
-  }
+    if(checkEmailExists($_POST['email']))
+    {
+        changePassword($_POST['email'],$_POST['password'],$_POST['repassword']);
+    }
+    else{
+        //error if email is not exist
+        echo '<script>alert("Email address is not exist")</script>';
+        //echo "<script>setTimeout(\"location.href = 'http://localhost/quizgo/html/general/forgot-password.php';\",1500);</script>";
+        echo "<script>setTimeout(\"location.href = '../../html/general/forgot-password.php';\",1500);</script>";
+    }
   
 }
 
