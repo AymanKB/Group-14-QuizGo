@@ -1,9 +1,15 @@
 <?php
 
+$ERROR_EMAIL = "0";
 $ERROR = "0";
 if(isset($_GET['error'])){
   $ERROR = TRUE;
 }
+
+if(isset($_GET['error_email'])){
+	$ERROR_EMAIL = TRUE;
+}
+
 
  ?>
 
@@ -68,9 +74,12 @@ if(isset($_GET['error'])){
     var email = document.getElementById('email');
     var password= document.getElementById('password');
     if(<?php echo $ERROR ?>){
-      email.style.backgroundColor = "red";
+	  alert("Incorrect password!");
       password.style.backgroundColor = "red";
-    }
+    } else if (<?php echo $ERROR_EMAIL ?>){
+		alert ("Invalid email!");
+		email.style.backgroundColor = "red";
+	}
   </script>
 </body>
 </html>

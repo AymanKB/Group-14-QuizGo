@@ -31,8 +31,15 @@ if($valid){
     $page = "../advisor/advisor-home.php?id=" . $currentUser[0];
 
   }
-
 }
+ if(isset($_POST['Submit'])){
+  if (checkEmailExists($_POST['email']) && !$valid){
+		$page = "login.php?error=1";
+  }elseif (!$valid){ 
+		$page = "login.php?error_email=1";
+  }
+ }
+
 
 ?>
 
