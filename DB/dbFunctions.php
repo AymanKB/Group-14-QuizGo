@@ -17,6 +17,31 @@ function setConnectionInfo($values=array()){
 	}
 }
 
+//db to check passoword  same
+
+function checkPasswordSimilar($password)
+{
+	$pdo = setConnectionInfo(array(DBCONNECTION,DBUSER,DBPASS));
+	$sql = "SELECT * FROM user WHERE password='$password'";
+	try {
+	$statement= $pdo->prepare($sql);
+	$statement->execute();
+
+	if($statement->rowCount() > 0)
+	{
+		return false;
+	}
+	else 
+	{
+		return true;
+	}
+	}
+	catch(PDOException $e){
+		die($e->getMessage());
+	}
+	$pdo = null;
+}
+
 //General Read function from any table
 function read($table){
 	$pdo = setConnectionInfo(array(DBCONNECTION,DBUSER,DBPASS));
