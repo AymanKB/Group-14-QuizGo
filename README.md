@@ -1,3 +1,3 @@
 # Group-14-QuizGo
-# V1.0
+# V2.0
 Software Evolution &amp; Maintenance assignment.
